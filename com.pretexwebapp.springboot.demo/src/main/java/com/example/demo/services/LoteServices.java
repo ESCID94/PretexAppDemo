@@ -6,13 +6,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.repository.AnimalRepository;
+import com.example.demo.repository.LoteRepository;
 
 @Service
-public class AnimalServices<T, ID extends Serializable> {
+public class LoteServices<T, ID extends Serializable> {
 
 	@Autowired
-	AnimalRepository<T,ID> repo;
+	LoteRepository<T,ID> repo;
 
 	public T add(T t) {
 		return repo.save(t);

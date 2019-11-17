@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.model.Animal;
-import com.example.demo.services.AnimalServices;
+import com.example.demo.model.Lote;
+import com.example.demo.services.LoteServices;
 
 
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -29,7 +29,7 @@ public class Controller<T, ID extends Serializable> {
 
 	/** The service. */
 	@Autowired
-	private AnimalServices<T, ID> service;
+	private LoteServices<T, ID> service;
 
 	/** The Constant logger. */
 	@SuppressWarnings(value = { "unused" })
@@ -43,8 +43,8 @@ public class Controller<T, ID extends Serializable> {
 	 */
 	@SuppressWarnings("unchecked")
 	@PostMapping
-	public Animal create(@RequestBody Animal animal) {
-		return (Animal) service.add((T) animal);
+	public Lote create(@RequestBody Lote Lote) {
+		return (Lote) service.add((T) Lote);
 	}
 
 	/**
@@ -54,8 +54,8 @@ public class Controller<T, ID extends Serializable> {
 	 * @return the persona
 	 */
 	@GetMapping(path = { "/{id}" })
-	public Animal findOne(@PathVariable("id") ID id) {
-		return (Animal) service.get(id);
+	public Lote findOne(@PathVariable("id") ID id) {
+		return (Lote) service.get(id);
 	}
 
 	/**
@@ -66,9 +66,9 @@ public class Controller<T, ID extends Serializable> {
 	 */
 	@SuppressWarnings("unchecked")
 	@PutMapping
-	public Animal update(@RequestBody Animal animal) {
-		animal.setId((animal.getId()));
-		return (Animal) service.update((T) animal);
+	public Lote update(@RequestBody Lote Lote) {
+		Lote.setIdPRETEX_LOTE((Lote.getIdPRETEX_LOTE()));
+		return (Lote) service.update((T) Lote);
 	}
 
 	/**
@@ -88,8 +88,8 @@ public class Controller<T, ID extends Serializable> {
 	 */
 	@SuppressWarnings("unchecked")
 	@GetMapping
-	public List<Animal> findAll() {
-		return (List<Animal>) service.list();
+	public List<Lote> findAll() {
+		return (List<Lote>) service.list();
 	}
 	
 }
